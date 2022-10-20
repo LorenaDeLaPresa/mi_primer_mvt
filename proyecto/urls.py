@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ejemplo.views import index, monstrar_familiares
+from ejemplo.views import index, monstrar_familiares, BuscarFamiliar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludar/', index), # ESTA ES LA NUEVA FUNCTION
     path('mi-familia/', monstrar_familiares), # nueva vista
+    path('mi-familia/buscar', BuscarFamiliar.as_view()),
 ]
